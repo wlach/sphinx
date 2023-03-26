@@ -7,15 +7,15 @@
 # FIRST AUTHOR <roger.demetrescu@gmail.com>, 2008
 # gilberto dos santos alves <gsavix@gmail.com>, 2015-2016
 # Rafael Fontenelle <rafaelff@gnome.org>, 2019
-# Rafael Fontenelle <rffontenelle@gmail.com>, 2019-2022
+# Rafael Fontenelle <rffontenelle@gmail.com>, 2019-2023
 # Komiya Takeshi <i.tkomiya@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Sphinx\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-03-15 15:48+0000\n"
+"POT-Creation-Date: 2023-03-26 22:39+0000\n"
 "PO-Revision-Date: 2013-04-02 08:44+0000\n"
-"Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2019-2022\n"
+"Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2019-2023\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/sphinx-doc/sphinx-1/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,123 +24,123 @@ msgstr ""
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: sphinx/application.py:148
+#: sphinx/application.py:153
 #, python-format
 msgid "Cannot find source directory (%s)"
 msgstr "Não foi possível encontrar o diretório de origem (%s)"
 
-#: sphinx/application.py:152
+#: sphinx/application.py:157
 #, python-format
 msgid "Output directory (%s) is not a directory"
 msgstr "O diretório de saída (%s) não é um diretório"
 
-#: sphinx/application.py:156
+#: sphinx/application.py:161
 msgid "Source directory and destination directory cannot be identical"
 msgstr "Diretório de origem e o diretório de destino não podem ser idênticos"
 
-#: sphinx/application.py:188
+#: sphinx/application.py:193
 #, python-format
 msgid "Running Sphinx v%s"
 msgstr "Executando Sphinx v%s"
 
-#: sphinx/application.py:214
+#: sphinx/application.py:219
 #, python-format
 msgid ""
 "This project needs at least Sphinx v%s and therefore cannot be built with "
 "this version."
 msgstr "Este projeto precisa de pelo menos Sphinx v%s e, portanto, não pode ser compilado com esta versão."
 
-#: sphinx/application.py:229
+#: sphinx/application.py:235
 msgid "making output directory"
 msgstr "criando o diretório de saída"
 
-#: sphinx/application.py:234 sphinx/registry.py:438
+#: sphinx/application.py:240 sphinx/registry.py:438
 #, python-format
 msgid "while setting up extension %s:"
 msgstr "enquanto definia a extensão %s:"
 
-#: sphinx/application.py:240
+#: sphinx/application.py:246
 msgid ""
 "'setup' as currently defined in conf.py isn't a Python callable. Please "
 "modify its definition to make it a callable function. This is needed for "
 "conf.py to behave as a Sphinx extension."
 msgstr "“setup”, conforme definido atualmente em conf.py, não é um invocável do Python. Modifique sua definição para torná-la uma função que pode ser chamada. Isso é necessário para o conf.py se comportar como uma extensão do Sphinx."
 
-#: sphinx/application.py:271
+#: sphinx/application.py:277
 #, python-format
 msgid "loading translations [%s]... "
 msgstr "carregando traduções [%s]… "
 
-#: sphinx/application.py:288 sphinx/util/display.py:77
+#: sphinx/application.py:294 sphinx/util/display.py:77
 msgid "done"
 msgstr "feito"
 
-#: sphinx/application.py:290
+#: sphinx/application.py:296
 msgid "not available for built-in messages"
 msgstr "não disponível para mensagens internas"
 
-#: sphinx/application.py:306
+#: sphinx/application.py:312
 msgid "loading pickled environment"
 msgstr "carregando ambiente com pickle"
 
-#: sphinx/application.py:312
+#: sphinx/application.py:318
 #, python-format
 msgid "failed: %s"
 msgstr "falha: %s"
 
-#: sphinx/application.py:326
+#: sphinx/application.py:332
 msgid "No builder selected, using default: html"
 msgstr "Nenhum compilador selecionado, usando padrão: html"
 
-#: sphinx/application.py:361
+#: sphinx/application.py:367
 msgid "succeeded"
 msgstr "bem-sucedida"
 
-#: sphinx/application.py:362
+#: sphinx/application.py:368
 msgid "finished with problems"
 msgstr "finalizada com problemas"
 
-#: sphinx/application.py:366
+#: sphinx/application.py:372
 #, python-format
 msgid "build %s, %s warning (with warnings treated as errors)."
 msgstr "compilação %s, %s aviso. (com avisos tratados como erros)."
 
-#: sphinx/application.py:368
+#: sphinx/application.py:374
 #, python-format
 msgid "build %s, %s warnings (with warnings treated as errors)."
 msgstr "compilação %s, %s avisos (com avisos tratados como erros)."
 
-#: sphinx/application.py:371
+#: sphinx/application.py:377
 #, python-format
 msgid "build %s, %s warning."
 msgstr "compilação %s, %s aviso."
 
-#: sphinx/application.py:373
+#: sphinx/application.py:379
 #, python-format
 msgid "build %s, %s warnings."
 msgstr "compilação %s, %s avisos."
 
-#: sphinx/application.py:377
+#: sphinx/application.py:383
 #, python-format
 msgid "build %s."
 msgstr "compilação %s."
 
-#: sphinx/application.py:599
+#: sphinx/application.py:605
 #, python-format
 msgid "node class %r is already registered, its visitors will be overridden"
 msgstr "classe de nodo %r já está registrada, seus visitantes serão sobrescritos"
 
-#: sphinx/application.py:678
+#: sphinx/application.py:684
 #, python-format
 msgid "directive %r is already registered, it will be overridden"
 msgstr "diretiva %r já está registrada, ela será sobrescrita"
 
-#: sphinx/application.py:700 sphinx/application.py:722
+#: sphinx/application.py:706 sphinx/application.py:728
 #, python-format
 msgid "role %r is already registered, it will be overridden"
 msgstr "papel %r já está registrado, ele será sobrescrito"
 
-#: sphinx/application.py:1264
+#: sphinx/application.py:1270
 #, python-format
 msgid ""
 "the %s extension does not declare if it is safe for parallel reading, "
@@ -148,12 +148,12 @@ msgid ""
 "explicit"
 msgstr "a extensão %s não declara se é segura para leitura em paralelo, supondo que não seja – peça ao autor da extensão para verificar e torná-la explícita"
 
-#: sphinx/application.py:1268
+#: sphinx/application.py:1274
 #, python-format
 msgid "the %s extension is not safe for parallel reading"
 msgstr "a extensão %s não é segura para leitura em paralelo"
 
-#: sphinx/application.py:1271
+#: sphinx/application.py:1277
 #, python-format
 msgid ""
 "the %s extension does not declare if it is safe for parallel writing, "
@@ -161,12 +161,12 @@ msgid ""
 "explicit"
 msgstr "a extensão %s não declara se é segura para escrita em paralelo, supondo que não seja – peça ao autor da extensão para verificar e torná-la explícita"
 
-#: sphinx/application.py:1275
+#: sphinx/application.py:1281
 #, python-format
 msgid "the %s extension is not safe for parallel writing"
 msgstr "a extensão %s não é segura para escrita em paralelo"
 
-#: sphinx/application.py:1283 sphinx/application.py:1287
+#: sphinx/application.py:1289 sphinx/application.py:1293
 #, python-format
 msgid "doing serial %s"
 msgstr "fazendo serial %s"
@@ -180,7 +180,7 @@ msgstr "o diretório de configuração não contém um arquivo conf.py (%s)"
 msgid ""
 "Invalid configuration value found: 'language = None'. Update your "
 "configuration to a valid language code. Falling back to 'en' (English)."
-msgstr ""
+msgstr "Valor de configuração inválido encontrado: 'language = None'. Atualize sua configuração para um código de idioma válido. Voltando para 'en' (inglês)."
 
 #: sphinx/config.py:213
 #, python-format
@@ -324,8 +324,8 @@ msgstr "Nome de analisador léxico Pygments %r não é conhecido"
 
 #: sphinx/highlighting.py:173
 #, python-format
-msgid "Could not lex literal_block as \"%s\". Highlighting skipped."
-msgstr "Não foi possível fazer análise léxica de literal_block como “%s”. Realce de sintaxe ignorado."
+msgid "Could not lex literal_block %r as \"%s\". Highlighting skipped."
+msgstr "Não foi possível fazer análise léxica de %r como “%s”. Realce de sintaxe ignorado."
 
 #: sphinx/project.py:51
 #, python-format
@@ -556,7 +556,7 @@ msgstr "todos os arquivos-fonte"
 #: sphinx/builders/__init__.py:280
 #, python-format
 msgid "file %r given on command line does not exist, "
-msgstr ""
+msgstr "arquivo %r fornecido na linha de comando não existe,"
 
 #: sphinx/builders/__init__.py:285
 #, python-format
@@ -567,7 +567,7 @@ msgstr "o arquivo %r fornecido na linha de comando não está dentro do diretór
 #: sphinx/builders/__init__.py:291
 #, python-format
 msgid "file %r given on command line is not a valid document, ignoring"
-msgstr ""
+msgstr "o arquivo %r fornecido na linha de comando não é um documento válido, ignorando"
 
 #: sphinx/builders/__init__.py:300
 #, python-format
@@ -809,7 +809,7 @@ msgstr "link quebrado: %s (%s)"
 msgid "Anchor '%s' not found"
 msgstr "Âncora “%s” não encontrada"
 
-#: sphinx/builders/linkcheck.py:561
+#: sphinx/builders/linkcheck.py:557
 #, python-format
 msgid "Failed to compile regex in linkcheck_allowed_redirects: %r %s"
 msgstr "Falha ao compilar regex em linkcheck_allowed_redirects: %r %s"
@@ -1074,10 +1074,10 @@ msgstr "o arquivo favicon %r não existe"
 #: sphinx/builders/html/__init__.py:1318
 msgid ""
 "Support for emitting HTML 4 output is deprecated and will be removed in "
-"Sphinx 7. (\"html4_writer=True detected in configuration options)"
+"Sphinx 7. (\"html4_writer=True\" detected in configuration options)"
 msgstr ""
 
-#: sphinx/builders/html/__init__.py:1339
+#: sphinx/builders/html/__init__.py:1332
 #, python-format
 msgid "%s %s documentation"
 msgstr "documentação %s %s"
@@ -2315,12 +2315,12 @@ msgstr "numfig_format inválido: %s"
 #: sphinx/domains/std.py:1137
 #, python-format
 msgid "undefined label: %r"
-msgstr ""
+msgstr "rótulo não definido: %r"
 
 #: sphinx/domains/std.py:1139
 #, python-format
 msgid "Failed to create a cross reference. A title or caption not found: %r"
-msgstr ""
+msgstr "Falha ao criar uma referência cruzada. Título ou legenda não encontrado: %r"
 
 #: sphinx/environment/__init__.py:67
 msgid "new config"
@@ -2401,7 +2401,7 @@ msgstr "toctree contém referência ao documento %r que não possui título: nen
 #: sphinx/environment/adapters/toctree.py:185
 #, python-format
 msgid "toctree contains reference to non-included document %r"
-msgstr ""
+msgstr "toctree contém referência ao documento não incluído %r"
 
 #: sphinx/environment/collectors/asset.py:82
 #, python-format
@@ -2543,7 +2543,7 @@ msgstr "%s não é um diretório."
 #: sphinx/ext/autosectionlabel.py:45
 #, python-format
 msgid "section \"%s\" gets labeled as \"%s\""
-msgstr ""
+msgstr "a seção \"%s\" fica rotulada como \"%s\""
 
 #: sphinx/ext/coverage.py:40
 #, python-format
@@ -2700,7 +2700,7 @@ msgid ""
 "Unable to run the image conversion command %r. 'sphinx.ext.imgconverter' requires ImageMagick by default. Ensure it is installed, or set the 'image_converter' option to a custom conversion command.\n"
 "\n"
 "Traceback: %s"
-msgstr ""
+msgstr "Não é possível executar o comando de conversão de imagem %r. 'sphinx.ext.imgconverter' requer ImageMagick por padrão. Verifique se ele está instalado ou defina a opção 'image_converter' para um comando de conversão personalizado.\n\nRastreamento: %s"
 
 #: sphinx/ext/imgconverter.py:45 sphinx/ext/imgconverter.py:69
 #, python-format
@@ -2745,57 +2745,57 @@ msgstr "latex em linha %r: %s"
 msgid "Permalink to this equation"
 msgstr "Link permanente para essa equação"
 
-#: sphinx/ext/intersphinx.py:176
+#: sphinx/ext/intersphinx.py:192
 #, python-format
 msgid "intersphinx inventory has moved: %s -> %s"
 msgstr "o inventário intersphinx foi movido: %s -> %s"
 
-#: sphinx/ext/intersphinx.py:207
+#: sphinx/ext/intersphinx.py:228
 #, python-format
 msgid "loading intersphinx inventory from %s..."
 msgstr "carregando inventário intersphinx de %s…"
 
-#: sphinx/ext/intersphinx.py:221
+#: sphinx/ext/intersphinx.py:242
 msgid ""
 "encountered some issues with some of the inventories, but they had working "
 "alternatives:"
 msgstr "encontrados alguns problemas com alguns dos inventários, mas eles tem alternativas em funcionamento:"
 
-#: sphinx/ext/intersphinx.py:227
+#: sphinx/ext/intersphinx.py:248
 msgid "failed to reach any of the inventories with the following issues:"
 msgstr "falha ao alcançar todos os inventários com os seguintes problemas:"
 
-#: sphinx/ext/intersphinx.py:272
+#: sphinx/ext/intersphinx.py:301
 #, python-format
 msgid "(in %s v%s)"
 msgstr "(em %s v%s)"
 
-#: sphinx/ext/intersphinx.py:274
+#: sphinx/ext/intersphinx.py:303
 #, python-format
 msgid "(in %s)"
 msgstr "(em %s)"
 
-#: sphinx/ext/intersphinx.py:499
+#: sphinx/ext/intersphinx.py:528
 #, python-format
 msgid "inventory for external cross-reference not found: %s"
 msgstr "inventário para referência cruzada externa não encontrado: %s"
 
-#: sphinx/ext/intersphinx.py:505
+#: sphinx/ext/intersphinx.py:534
 #, python-format
 msgid "role for external cross-reference not found: %s"
 msgstr "papel para referência cruzada externa não encontrado: %s"
 
-#: sphinx/ext/intersphinx.py:589
+#: sphinx/ext/intersphinx.py:618
 #, python-format
 msgid "external %s:%s reference target not found: %s"
 msgstr "alvo da referência externa %s:%s não encontrado: %s"
 
-#: sphinx/ext/intersphinx.py:614
+#: sphinx/ext/intersphinx.py:643
 #, python-format
 msgid "intersphinx identifier %r is not string. Ignored"
 msgstr "identificador intersphinx %r não é uma string. Ignorado"
 
-#: sphinx/ext/intersphinx.py:627
+#: sphinx/ext/intersphinx.py:665
 #, python-format
 msgid "Failed to read intersphinx_mapping[%s], ignored: %r"
 msgstr "Falha ao ler intersphinx_mapping[%s], ignorado: %r"
@@ -3147,43 +3147,43 @@ msgstr "string literal malformada (faltando aspas de fechamento): %s"
 msgid "malformed string literal (missing opening quote): %s"
 msgstr "string literal malformada (faltando aspas de abertura): %s"
 
-#: sphinx/locale/__init__.py:245
+#: sphinx/locale/__init__.py:225
 msgid "Attention"
 msgstr "Atenção"
 
-#: sphinx/locale/__init__.py:246
+#: sphinx/locale/__init__.py:226
 msgid "Caution"
 msgstr "Cuidado"
 
-#: sphinx/locale/__init__.py:247
+#: sphinx/locale/__init__.py:227
 msgid "Danger"
 msgstr "Perigo"
 
-#: sphinx/locale/__init__.py:248
+#: sphinx/locale/__init__.py:228
 msgid "Error"
 msgstr "Erro"
 
-#: sphinx/locale/__init__.py:249
+#: sphinx/locale/__init__.py:229
 msgid "Hint"
 msgstr "Dica"
 
-#: sphinx/locale/__init__.py:250
+#: sphinx/locale/__init__.py:230
 msgid "Important"
 msgstr "Importante"
 
-#: sphinx/locale/__init__.py:251
+#: sphinx/locale/__init__.py:231
 msgid "Note"
 msgstr "Nota"
 
-#: sphinx/locale/__init__.py:252
+#: sphinx/locale/__init__.py:232
 msgid "See also"
 msgstr "Ver também"
 
-#: sphinx/locale/__init__.py:253
+#: sphinx/locale/__init__.py:233
 msgid "Tip"
 msgstr "Dica"
 
-#: sphinx/locale/__init__.py:254
+#: sphinx/locale/__init__.py:234
 msgid "Warning"
 msgstr "Aviso"
 
@@ -3464,25 +3464,25 @@ msgstr "Nota de rodapé [%s] não é referenciada."
 msgid "Footnote [#] is not referenced."
 msgstr "Nota de rodapé [#] não é referenciada."
 
-#: sphinx/transforms/i18n.py:325 sphinx/transforms/i18n.py:396
+#: sphinx/transforms/i18n.py:201 sphinx/transforms/i18n.py:268
 msgid ""
 "inconsistent footnote references in translated message. original: {0}, "
 "translated: {1}"
 msgstr "referências de nota de rodapé inconsistentes na mensagem traduzida. original: {0}, traduzida: {1}"
 
-#: sphinx/transforms/i18n.py:368
+#: sphinx/transforms/i18n.py:241
 msgid ""
 "inconsistent references in translated message. original: {0}, translated: "
 "{1}"
 msgstr "referências inconsistentes na mensagem traduzida. original: {0}, traduzida: {1}"
 
-#: sphinx/transforms/i18n.py:417
+#: sphinx/transforms/i18n.py:283
 msgid ""
 "inconsistent citation references in translated message. original: {0}, "
 "translated: {1}"
 msgstr "referências de citação inconsistentes na mensagem traduzida. original: {0}, traduzida: {1}"
 
-#: sphinx/transforms/i18n.py:437
+#: sphinx/transforms/i18n.py:300
 msgid ""
 "inconsistent term references in translated message. original: {0}, "
 "translated: {1}"
