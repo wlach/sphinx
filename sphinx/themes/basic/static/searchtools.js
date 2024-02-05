@@ -179,7 +179,8 @@ const Search = {
     if (Search._queued_query !== null) {
       const query = Search._queued_query;
       Search._queued_query = null;
-      Search.query(query);
+      let { results, searchTerms, highlightTerms } = Search.query(query);
+      _displayNextItem(results, results.length, searchTerms, highlightTerms);
     }
   },
 
@@ -227,8 +228,12 @@ const Search = {
     Search.startPulse();
 
     // index already loaded, the browser was quick!
-    if (Search.hasIndex()) Search.query(query);
-    else Search.deferQuery(query);
+    if (Search.hasIndex()) { 
+      let { results, searchTerms, highlightTerms } = Search.query(query);
+      _displayNextItem(results, results.length, searchTerms, highlightTerms);
+    } else {
+      Search.deferQuery(query);
+    }
   },
 
   /**
@@ -361,8 +366,7 @@ const Search = {
     //Search.lastresults = results.slice();  // a copy
     // console.info("search results:", Search.lastresults);
 
-    // print the results
-    _displayNextItem(results, results.length, searchTerms);
+    return { results, searchTerms, highlightTerms };
   },
 
   /**
@@ -457,17 +461,23 @@ const Search = {
         { files: terms[word], score: Scorer.term },
         { files: titleTerms[word], score: Scorer.title },
       ];
+
       // add support for partial matches
       if (word.length > 2) {
         const escapedWord = _escapeRegExp(word);
-        Object.keys(terms).forEach((term) => {
-          if (term.match(escapedWord) && !terms[word])
-            arr.push({ files: terms[term], score: Scorer.partialTerm });
-        });
-        Object.keys(titleTerms).forEach((term) => {
-          if (term.match(escapedWord) && !titleTerms[word])
-            arr.push({ files: titleTerms[word], score: Scorer.partialTitle });
-        });
+        if (!terms.hasOwnProperty(word)) {
+          Object.keys(terms).forEach((term) => {
+            if (term.match(escapedWord)) {
+              arr.push({ files: terms[term], score: Scorer.partialTerm });
+            }
+          });
+        }
+        if (!titleTerms.hasOwnProperty(word)) {
+          Object.keys(titleTerms).forEach((term) => {
+            if (term.match(escapedWord))
+              arr.push({ files: titleTerms[word], score: Scorer.partialTitle });
+          });
+        }
       }
 
       // no match but word was a required one
@@ -490,9 +500,13 @@ const Search = {
 
       // create the mapping
       files.forEach((file) => {
-        if (fileMap.has(file) && fileMap.get(file).indexOf(word) === -1)
-          fileMap.get(file).push(word);
-        else fileMap.set(file, [word]);
+        if (fileMap.has(file)) {
+          if (fileMap.get(file).indexOf(word) === -1) {
+            fileMap.get(file).push(word);
+          }
+        } else {
+          fileMap.set(file, [word]);
+        }
       });
     });
 
