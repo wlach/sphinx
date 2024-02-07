@@ -33,17 +33,17 @@ describe('Basic html theme search', function() {
     it("should not duplicate on title and content", function() {
       index = {
         alltitles: {
-          'Main Page': [[0, 'main-page']],
+          'Main Page': [[1, 'main-page']],
         },
-        docnames:["index"],
-        filenames:["index.rst"],
+        docnames:["", "index"],
+        filenames:["", "index.rst"],
         indexentries:{},
         objects:{},
         objtypes: {},
         objnames: {},
-        terms:{main:0, page:0},
-        titles:["Main Page"],
-        titleterms:{ main:0, page:0 }
+        terms:{main:1, page:1},
+        titles:["", "Main Page"],
+        titleterms:{ main:1, page:1 }
       }
       Search.setIndex(index);
 
