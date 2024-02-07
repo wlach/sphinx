@@ -47,7 +47,7 @@ describe('Basic html theme search', function() {
       }
       Search.setIndex(index);
 
-      _displayNextItem = jasmine.createSpy().and.returnValue(null);
+      _displayNextItem = jasmine.createSpy();
       Search.query('main page');
 
       // should only be one result
