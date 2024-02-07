@@ -21,7 +21,7 @@ describe('Basic html theme search', function() {
         "&lt;no title&gt;",
         "",
         null,
-        5,
+        2,
         "index.rst"
       ]];
       expect(Search.performTermsSearch(searchterms, excluded, terms, titleterms)).toEqual(hits);
