@@ -288,7 +288,7 @@ const Search = {
           results.push([
             docNames[file],
             titles[file] !== title ? `${titles[file]} > ${title}` : title,
-            id !== null ? "#" + id : "",
+            titles[file] !== title && id !== null ? "#" + id : "",
             null,
             score,
             filenames[file],

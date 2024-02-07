@@ -52,7 +52,7 @@ describe('Basic html theme search', function() {
 
       // should only be one result
       expect(_displayNextItem).toHaveBeenCalledWith(
-        [ [ 'index', 'Main Page', '#main-page', null, 100, 'index.rst' ] ],
+        [ [ 'index', 'Main Page', '', null, 100, 'index.rst' ] ],
         1,
         new Set([ 'main', 'page' ])
       );
