@@ -350,8 +350,8 @@ const Search = {
     // note the reversing of results, so that in the case of duplicates, the highest-scoring entry is kept
     let seen = new Set();
     results = results.reverse().reduce((acc, result) => {
-      const [docName, _title, anchor, _descr, _score, _filename] = result;
-      const resultStr = `${docName}${anchor}`;
+      const [docName, _title, anchor, descr, _score, filename] = result;
+      const resultStr = `${docName},${anchor},${descr},${filename}`;
       if (!seen.has(resultStr)) {
         acc.push(result);
         seen.add(resultStr);
