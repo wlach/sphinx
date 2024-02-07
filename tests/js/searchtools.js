@@ -46,11 +46,16 @@ describe('Basic html theme search', function() {
         titleterms:{ main:0, page:0 }
       }
       Search.setIndex(index);
-      let { results } = Search.query('main page');
+
+      _displayNextItem = jasmine.createSpy().and.returnValue(null);
+      Search.query('main page');
+
       // should only be one result
-      expect(results).toEqual([
-        [ 'index', 'Main Page', '#main-page', null, 100, 'index.rst' ],
-      ]);
+      expect(_displayNextItem).toHaveBeenCalledWith(
+        [ [ 'index', 'Main Page', '#main-page', null, 100, 'index.rst' ] ],
+        1,
+        new Set([ 'main', 'page' ])
+      );
     });
   })
 

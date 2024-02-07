@@ -112,7 +112,7 @@ const _finishSearch = (resultCount) => {
       `Search finished, found ${resultCount} page(s) matching the search query.`
     );
 };
-const _displayNextItem = (
+let _displayNextItem = (
   results,
   resultCount,
   searchTerms
@@ -179,8 +179,7 @@ const Search = {
     if (Search._queued_query !== null) {
       const query = Search._queued_query;
       Search._queued_query = null;
-      let { results, searchTerms, highlightTerms } = Search.query(query);
-      _displayNextItem(results, results.length, searchTerms, highlightTerms);
+      Search.query(query);
     }
   },
 
@@ -228,12 +227,8 @@ const Search = {
     Search.startPulse();
 
     // index already loaded, the browser was quick!
-    if (Search.hasIndex()) { 
-      let { results, searchTerms, highlightTerms } = Search.query(query);
-      _displayNextItem(results, results.length, searchTerms, highlightTerms);
-    } else {
-      Search.deferQuery(query);
-    }
+    if (Search.hasIndex()) Search.query(query);
+    else Search.deferQuery(query);
   },
 
   /**
@@ -365,7 +360,8 @@ const Search = {
     //Search.lastresults = results.slice();  // a copy
     // console.info("search results:", Search.lastresults);
 
-    return { results, searchTerms, highlightTerms };
+    // print the results
+    _displayNextItem(results, results.length, searchTerms);
   },
 
   /**
