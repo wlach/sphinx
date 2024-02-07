@@ -64,7 +64,7 @@ const _displayItem = (item, searchTerms) => {
   const docLinkSuffix = DOCUMENTATION_OPTIONS.LINK_SUFFIX;
   const showSearchSummary = DOCUMENTATION_OPTIONS.SHOW_SEARCH_SUMMARY;
 
-  const [docName, title, _isDocumentTitle, anchor, descr, score] = item;
+  const [docName, title, anchor, descr, score, _filename] = item;
 
   let listItem = document.createElement("li");
   let requestUrl;
@@ -290,13 +290,10 @@ const Search = {
       if (title.toLowerCase().includes(queryLower) && (queryLower.length >= title.length/2)) {
         for (const [file, id] of foundTitles) {
           let score = Math.round(100 * queryLower.length / title.length)
-          let isDocumentTitle = titles[file] === title
-          let anchor = id ? `#${id}` : ""
           results.push([
             docNames[file],
-            isDocumentTitle ? title : `${titles[file]} > ${title}`,
-            isDocumentTitle,
-            anchor,
+            titles[file] !== title ? `${titles[file]} > ${title}` : title,
+            id !== null ? "#" + id : "",
             null,
             score,
             filenames[file],
@@ -313,7 +310,6 @@ const Search = {
           results.push([
             docNames[file],
             titles[file],
-            false,
             id ? "#" + id : "",
             null,
             score,
@@ -338,8 +334,8 @@ const Search = {
     // display function below uses pop() to retrieve items) and then
     // alphabetically
     results.sort((a, b) => {
-      const leftScore = a[5];
-      const rightScore = b[5];
+      const leftScore = a[4];
+      const rightScore = b[4];
       if (leftScore === rightScore) {
         // same score: sort alphabetically
         const leftTitle = a[1].toLowerCase();
@@ -354,11 +350,7 @@ const Search = {
     // note the reversing of results, so that in the case of duplicates, the highest-scoring entry is kept
     let seen = new Set();
     results = results.reverse().reduce((acc, result) => {
-      // de-duplicate on file, title, description, and (if not the title section) anchor
-      // we omit the anchor for the title section as otherwise we'll get two entries for the
-      // entire document
-      let [docname, title, isDocumentTitle, anchor, descr, score, filename] = result;
-      let resultStr = [docname, title, isDocumentTitle ? '' : anchor, descr].map(v => String(v)).join(',');
+      let resultStr = result.slice(0, 4).concat([result[5]]).map(v => String(v)).join(',');
       if (!seen.has(resultStr)) {
         acc.push(result);
         seen.add(resultStr);
@@ -432,7 +424,6 @@ const Search = {
       results.push([
         docNames[match[0]],
         fullname,
-        false,
         "#" + anchor,
         descr,
         score,
@@ -468,23 +459,17 @@ const Search = {
         { files: terms[word], score: Scorer.term },
         { files: titleTerms[word], score: Scorer.title },
       ];
-
       // add support for partial matches
       if (word.length > 2) {
         const escapedWord = _escapeRegExp(word);
-        if (!terms.hasOwnProperty(word)) {
-          Object.keys(terms).forEach((term) => {
-            if (term.match(escapedWord)) {
-              arr.push({ files: terms[term], score: Scorer.partialTerm });
-            }
-          });
-        }
-        if (!titleTerms.hasOwnProperty(word)) {
-          Object.keys(titleTerms).forEach((term) => {
-            if (term.match(escapedWord))
-              arr.push({ files: titleTerms[word], score: Scorer.partialTitle });
-          });
-        }
+        Object.keys(terms).forEach((term) => {
+          if (term.match(escapedWord) && !terms[word])
+            arr.push({ files: terms[term], score: Scorer.partialTerm });
+        });
+        Object.keys(titleTerms).forEach((term) => {
+          if (term.match(escapedWord) && !titleTerms[word])
+            arr.push({ files: titleTerms[word], score: Scorer.partialTitle });
+        });
       }
 
       // no match but word was a required one
@@ -507,13 +492,9 @@ const Search = {
 
       // create the mapping
       files.forEach((file) => {
-        if (fileMap.has(file)) {
-          if (fileMap.get(file).indexOf(word) === -1) {
-            fileMap.get(file).push(word);
-          }
-        } else {
-          fileMap.set(file, [word]);
-        }
+        if (fileMap.has(file) && fileMap.get(file).indexOf(word) === -1)
+          fileMap.get(file).push(word);
+        else fileMap.set(file, [word]);
       });
     });
 
@@ -550,7 +531,6 @@ const Search = {
       results.push([
         docNames[file],
         titles[file],
-        false,
         "",
         null,
         score,
