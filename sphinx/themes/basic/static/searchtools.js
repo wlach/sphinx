@@ -345,8 +345,7 @@ const Search = {
     // note the reversing of results, so that in the case of duplicates, the highest-scoring entry is kept
     let seen = new Set();
     results = results.reverse().reduce((acc, result) => {
-      const [docName, _title, anchor, descr, _score, filename] = result;
-      const resultStr = `${docName},${anchor},${descr},${filename}`;
+      let resultStr = result.slice(0, 4).concat([result[5]]).map(v => String(v)).join(',');
       if (!seen.has(resultStr)) {
         acc.push(result);
         seen.add(resultStr);
